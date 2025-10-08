@@ -6,10 +6,10 @@ let isAlive = true
 let message = ""
 let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
-// 2. Store the sum paragraph in a variable called sumEl
+let cardsEl = document.getElementById("cards-el")
 
 function startGame() {
-    // 3. Render the sum on the page using this format -> "Sum: 14"
+    cardsEl.textContent = "Cards " + firstCard + ", " + secondCard
     sumEl.textContent = "Sum: " + sum
 
     if (sum <= 20) {
@@ -22,4 +22,9 @@ function startGame() {
         isAlive = false
     }
     messageEl.textContent = message
+    console.log("start button clicked")
+}
+function newCard() {
+    console.log("Drawing a new card from the deck!")
+    
 }
