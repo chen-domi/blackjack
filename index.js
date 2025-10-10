@@ -53,8 +53,14 @@ function renderGame() {
 }
 
 function newCard() {
-    let card = getRandomCard();
-    sum += card;
-    cards.push(card);
-    renderGame();
+    if (isAlive === true && hasBlackJack === false) {
+        let card = getRandomCard()
+        sum += card
+        cards.push(card)
+        renderGame()
+    } else {
+        message = "You can't draw more cards"
+        messageEl.textContent = message
+        return message
+    }
 }
